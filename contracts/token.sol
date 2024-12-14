@@ -12,4 +12,8 @@ contract Token is ERC20 {
         require(initialSupply > 0, "Initial supply has to be greater than 0");
         _mint(msg.sender, initialSupply * 10**18);
     }
+
+     function mint(address to, uint256 amount) external onlyOwner {
+        _mint(to, amount);
+    }
 }
